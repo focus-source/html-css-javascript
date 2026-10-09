@@ -59,7 +59,6 @@ jobs:
             ${{ env.IMAGE }}:${{ steps.tags.outputs.version }}
             ${{ env.IMAGE }}:latest
           provenance: true
-          sbom: true
 
       - name: Print digests
         run: docker buildx imagetools inspect "${{ env.IMAGE }}:${{ steps.tags.outputs.version }}"
