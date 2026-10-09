@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Greeting</title>
+</head>
+<body>
+  <h1>Greeting maker</h1>
+  <label for="name">Your name:</label>
+  <input id="name" type="text" value="Asha" />
+  <button id="go" type="button">Greet me</button>
+  <p id="out">Press the button.</p>
+  <script>
+    const input = document.querySelector("#name");
+    const out = document.querySelector("#out");
+    document.querySelector("#go").addEventListener("click", () => {
+      const name = input.value.trim() || "friend";
+      out.textContent = "Hello, " + name + "!";
+      console.log("Greeted:", name);
+    });
+  </script>
+</body>
+</html>

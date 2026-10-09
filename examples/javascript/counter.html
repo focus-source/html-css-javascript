@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Click Counter</title>
+</head>
+<body>
+  <h1>Clicks: <span id="count">0</span></h1>
+  <button id="btn" type="button">Click me</button>
+  <script>
+    let count = 0;
+    const label = document.querySelector("#count");
+    document.querySelector("#btn").addEventListener("click", () => {
+      count = count + 1;
+      label.textContent = count;
+    });
+  </script>
+</body>
+</html>

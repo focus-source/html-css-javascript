@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Number Guessing Game</title>
+</head>
+<body>
+  <h1>Guess 1–20</h1>
+  <input id="guess" type="number" min="1" max="20" />
+  <button id="go" type="button">Try</button>
+  <p id="msg">I picked a number. Can you beat me?</p>
+  <p>Best this page-load: <span id="best">—</span></p>
+  <script>
+    let secret = Math.floor(Math.random() * 20) + 1;
+    let tries = 0;
+    let best = null;
+    const msg = document.querySelector("#msg");
+    document.querySelector("#go").addEventListener("click", () => {
+      const g = Number(document.querySelector("#guess").value);
+      tries += 1;
+      if (g === secret) {
+        msg.textContent = "Correct in " + tries + " tries! New number picked.";
+        if (best === null || tries < best) {
+          best = tries;
+          document.querySelector("#best").textContent = best;
+        }
+        secret = Math.floor(Math.random() * 20) + 1;
+        tries = 0;
+      } else if (g < secret) {
+        msg.textContent = "Too low — try higher.";
+      } else {
+        msg.textContent = "Too high — try lower.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Pinned documentation dependencies.
+# Verified together — upgrade deliberately and re-run `mkdocs build`.
+mkdocs==1.6.1
+mkdocs-material==9.5.31
+pymdown-extensions==10.7.1

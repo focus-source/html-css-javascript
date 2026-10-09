@@ -1,0 +1,7 @@
+# Build + local dev artifacts (never commit)
+site/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store

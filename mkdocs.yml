@@ -1,0 +1,75 @@
+site_name: Hello Web — Interactive Web Development for Freshers
+site_url: http://localhost:5000/
+site_description: A browser-first, hands-on HTML, CSS, and JavaScript tutorial for engineering freshers. Docker-first learning environment.
+site_author: focuslog
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Prerequisites: getting-started/prerequisites.md
+      - Setup (Docker First): getting-started/setup.md
+      - How to Learn: getting-started/how-to-learn.md
+  - Part 1 — Web Basics:
+      - Overview: part-01-web-basics/index.md
+      - Mission 1 — Your First Webpage: part-01-web-basics/mission-1-first-webpage.md
+  - Part 2 — HTML:
+      - Overview: part-02-html/index.md
+  - Part 3 — CSS:
+      - Overview: part-03-css/index.md
+  - Part 4 — JavaScript:
+      - Overview: part-04-javascript/index.md
+  - Part 5 — DOM Interaction:
+      - Overview: part-05-dom-interaction/index.md
+  - Part 6 — Mini-Games:
+      - Overview: part-06-mini-games/index.md
+  - Part 7 — Challenges:
+      - Overview: part-07-independent-challenges/index.md
+  - Guides:
+      - Live-Edit Mode (Optional): guides/live-edit.md
+      - Version Policy (1.0 + latest): guides/version-policy.md
+  - Appendices:
+      - Glossary: appendices/glossary.md
+      - Troubleshooting: appendices/troubleshooting.md
+      - Skills Checklist: appendices/skills-checklist.md
+
+validation:
+  omitted_files: warn
+  # /examples/... links resolve in the Docker runtime (site/ + examples/
+  # merged by the Dockerfile), not in a bare `mkdocs build`. Keep them
+  # as info so `--strict` stays green while other warnings still fail.
+  absolute_links: info
