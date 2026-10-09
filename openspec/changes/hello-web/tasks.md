@@ -26,7 +26,7 @@
 ## 4. Docker Hub publishing
 
 - [x] 4.1 Add GitHub Actions publish workflow building `linux/amd64` + `linux/arm64` and pushing `focuslog/hello-web:1.0` and `latest` with digests
-- [ ] 4.2 Configure Hub PAT as GitHub secrets for `focuslog` org and verify free-account public push succeeds (BLOCKED: needs org owner to add `DOCKERHUB_USERNAME`/`DOCKERHUB_TOKEN` secrets and run the workflow; see `docs/guides/version-policy.md`)
+- [ ] 4.2 Configure Hub PAT as GitHub secrets for `focuslog` org and verify free-account public push succeeds (BLOCKED: secrets added; workflow fixed login-first, but Hub registry returns HTTP 500 to Actions runners — `registry-1.docker.io/v2/` and `auth.docker.io/token` both 500 since 21:05Z. Retried 4x. Wait for Hub throttle to clear, then rerun workflow dispatch `version=1.0`. If login then 401s, the PAT is wrong — regenerate with write access to `focuslog/hello-web`.)
 - [x] 4.3 Publish Hub README mirroring homepage (what image does, run command, tags, what it does not do)
 - [x] 4.4 Freeze `1.0` policy docs (immutable after class start, fixes as new versions, `latest` rolls forward)
 
